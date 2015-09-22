@@ -16,6 +16,10 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        $response = $this->response;
+        /* @var $response \Zend\Http\PhpEnvironment\Response */
+        $response->setStatusCode(201);
+        $response->getHeaders()->addHeaderLine('Test', '112233');
         return new ViewModel();
     }
 }
